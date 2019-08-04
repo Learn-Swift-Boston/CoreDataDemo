@@ -24,6 +24,8 @@ class AddSessionViewController: UIViewController {
         return formatter
     }()
 
+    private var selectedSpeakerIndex: Int?
+
     private lazy var fetchedResultsController: NSFetchedResultsController<Speaker> = {
         let fetchRequest: NSFetchRequest<Speaker> = Speaker.fetchRequest()
 
@@ -64,8 +66,9 @@ class AddSessionViewController: UIViewController {
     }
     
     @IBAction func addTapped(_ sender: Any) {
-        guard let title = titleField.text, !title.isEmpty else {
-            let alert = UIAlertController(title: "Title can’t be empty", message: nil, preferredStyle: .alert)
+        guard let title = titleField.text, !title.isEmpty,
+        let speakerIndex = selectedSpeakerIndex else {
+            let alert = UIAlertController(title: "All Fields Required", message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
             return
@@ -94,6 +97,7 @@ extension AddSessionViewController: UIPickerViewDelegate {
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedSpeakerIndex = row
         speakerField.text = fetchedResultsController.fetchedObjects?[row].name
     }
     
