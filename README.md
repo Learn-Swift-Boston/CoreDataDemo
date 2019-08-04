@@ -4,6 +4,8 @@ Demo app for the Learn Swift Boston meetup that includes an introduction to Core
 
 The app is a simple app for the meetup group itself. It has one tab where you can add speakers and sessions, and another tab where you can see a list of all the sessions.
 
+The Core Data code is inspired from the template you get when you create a new project in Xcode and choose **iOS** → **Master-Detail App** and check the **Core Data** checkbox.
+
 ## Branches
 
 This repository has two branches:
