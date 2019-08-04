@@ -10,22 +10,24 @@ import UIKit
 
 class AddSessionViewController: UIViewController {
     
+    @IBOutlet weak var titleField: UITextField!
+    @IBOutlet weak var speakerField: UITextField!
+    @IBOutlet weak var dateField: UITextField!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func cancelTapped() {
+        dismiss(animated: true, completion: nil)
     }
-    */
+    
+    @IBAction func addTapped(_ sender: Any) {
+        // TODO: add session to Core Data
+        dismiss(animated: true, completion: nil)
+    }
 
 }

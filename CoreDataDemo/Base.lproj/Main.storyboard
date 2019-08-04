@@ -47,7 +47,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xXg-4S-Pew">
                                             <rect key="frame" x="24" y="19" width="272" height="86"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6et-J2-gHj">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6et-J2-gHj">
                                                     <rect key="frame" x="0.0" y="0.0" width="272" height="45.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <nil key="textColor"/>
@@ -56,14 +56,14 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="e3y-Pm-ybg">
                                                     <rect key="frame" x="0.0" y="65.5" width="272" height="20.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Aa-Sf-IOe">
-                                                            <rect key="frame" x="0.0" y="0.0" width="214" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Speaker Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Aa-Sf-IOe">
+                                                            <rect key="frame" x="0.0" y="0.0" width="220" height="20.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfv-0j-bIX">
-                                                            <rect key="frame" x="230" y="0.0" width="42" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfv-0j-bIX">
+                                                            <rect key="frame" x="236" y="0.0" width="36" height="20.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -80,6 +80,11 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="xXg-4S-Pew" secondAttribute="trailing" constant="8" id="vQb-yf-kQx"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="Wfv-0j-bIX" id="Grk-p2-3Wg"/>
+                                    <outlet property="speakerLabel" destination="3Aa-Sf-IOe" id="gb3-OR-oKQ"/>
+                                    <outlet property="titleLabel" destination="6et-J2-gHj" id="dbr-UM-Syr"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -190,9 +195,20 @@
                         <viewLayoutGuide key="safeArea" id="5VL-2C-wer"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Speaker" id="Gze-tu-1su">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="2U8-NA-EXu"/>
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="jEt-Uc-0yq"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="2U8-NA-EXu">
+                            <connections>
+                                <action selector="cancelTapped" destination="OgI-aH-Ort" id="8K4-Xm-IC4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="jEt-Uc-0yq">
+                            <connections>
+                                <action selector="addTapped:" destination="OgI-aH-Ort" id="S1L-gv-H9d"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameField" destination="nzc-Hh-lG0" id="3Im-av-I5H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5S-Zm-pVg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -266,12 +282,25 @@
                         <viewLayoutGuide key="safeArea" id="WzF-sC-KY7"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Session" id="fbn-d7-VEF">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="DBc-wZ-TQA"/>
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="hO1-yf-omF"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="DBc-wZ-TQA">
+                            <connections>
+                                <action selector="cancelTapped" destination="ZHr-TJ-6dG" id="mpm-t5-509"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="hO1-yf-omF">
+                            <connections>
+                                <action selector="addTapped:" destination="ZHr-TJ-6dG" id="idd-xa-sY6"/>
+                            </connections>
+                        </barButtonItem>
                         <connections>
                             <outlet property="leftBarButtonItem" destination="DBc-wZ-TQA" id="oct-wj-7L0"/>
                         </connections>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dateField" destination="5ke-as-FVL" id="Ihz-GB-Jg6"/>
+                        <outlet property="speakerField" destination="iH2-0y-Ibk" id="jAp-CZ-EBA"/>
+                        <outlet property="titleField" destination="ZFq-J8-2UB" id="gmp-pU-uTp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hfq-7d-etI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
