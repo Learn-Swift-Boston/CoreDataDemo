@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddSessionViewController: UIViewController {
     
@@ -21,6 +22,31 @@ class AddSessionViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         return formatter
+    }()
+
+    private lazy var fetchedResultsController: NSFetchedResultsController<Speaker> = {
+        let fetchRequest: NSFetchRequest<Speaker> = Speaker.fetchRequest()
+
+        let sortDescriptor = NSSortDescriptor(keyPath: \Speaker.name, ascending: true)
+
+        fetchRequest.sortDescriptors = [sortDescriptor]
+
+        let fetchedResultsController = NSFetchedResultsController(
+            fetchRequest: fetchRequest,
+            managedObjectContext: DataStore.shared.managedObjectContext,
+            sectionNameKeyPath: nil, // not using sections
+            cacheName: nil // no need for caching
+        )
+
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nserror = error as NSError
+            fatalError("Error fetching speakers: \(nserror), \(nserror.userInfo)")
+        }
+        return fetchedResultsController
     }()
     
     override func viewDidLoad() {
@@ -56,8 +82,7 @@ extension AddSessionViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        // TODO: populate from Core Data
-        return 1
+        return fetchedResultsController.fetchedObjects?.count ?? 0
     }
 
 }
@@ -65,7 +90,7 @@ extension AddSessionViewController: UIPickerViewDataSource {
 extension AddSessionViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "TODO: speakers from Core Data"
+        return fetchedResultsController.fetchedObjects?[row].name
     }
     
 }
