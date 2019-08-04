@@ -14,11 +14,17 @@ class AddSessionViewController: UIViewController {
     @IBOutlet weak var speakerField: UITextField!
     @IBOutlet weak var dateField: UITextField!
 
+    let speakerPicker = UIPickerView()
+    let datePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        speakerPicker.dataSource = self
+        speakerPicker.delegate = self
+        speakerField.inputView = speakerPicker
+    
+        dateField.inputView = datePicker
     }
     
     @IBAction func cancelTapped() {
@@ -30,4 +36,24 @@ class AddSessionViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
+}
+
+extension AddSessionViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        // TODO: populate from Core Data
+        return 1
+    }
+
+}
+
+extension AddSessionViewController: UIPickerViewDelegate {
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "TODO: speakers from Core Data"
+    }
+    
 }
