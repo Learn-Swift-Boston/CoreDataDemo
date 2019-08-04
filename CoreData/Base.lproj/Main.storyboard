@@ -31,13 +31,13 @@
         <!--Item-->
         <scene sceneID="HsX-0a-mG7">
             <objects>
-                <tableViewController id="xHY-e4-ziB" sceneMemberID="viewController">
+                <tableViewController id="xHY-e4-ziB" customClass="SessionsViewController" customModule="CoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mGZ-x5-3Pv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="124" id="g6p-jb-77H">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sessionCell" rowHeight="124" id="g6p-jb-77H" customClass="SessionTableViewCell" customModule="CoreData" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="124"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g6p-jb-77H" id="HtU-cZ-g2k">
@@ -161,7 +161,7 @@
         <!--Add Speaker-->
         <scene sceneID="kJo-C1-wPe">
             <objects>
-                <viewController title="Add Speaker" id="OgI-aH-Ort" sceneMemberID="viewController">
+                <viewController title="Add Speaker" id="OgI-aH-Ort" customClass="AddSpeakerViewController" customModule="CoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VCS-R9-987">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -201,7 +201,7 @@
         <!--Add Session-->
         <scene sceneID="cPl-Le-zRW">
             <objects>
-                <viewController title="Add Session" id="ZHr-TJ-6dG" sceneMemberID="viewController">
+                <viewController title="Add Session" id="ZHr-TJ-6dG" customClass="AddSessionViewController" customModule="CoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cpq-Op-Bvx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
