@@ -32,6 +32,12 @@ class AddSessionViewController: UIViewController {
     }
     
     @IBAction func addTapped(_ sender: Any) {
+        guard let title = titleField.text, !title.isEmpty else {
+            let alert = UIAlertController(title: "Title can’t be empty", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            return
+        }
         // TODO: add session to Core Data
         dismiss(animated: true, completion: nil)
     }

@@ -23,6 +23,12 @@ class AddSpeakerViewController: UIViewController {
     }
 
     @IBAction func addTapped(_ sender: Any) {
+        guard let name = nameField.text, !name.isEmpty else {
+            let alert = UIAlertController(title: "Name can’t be empty", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            return
+        }
         // TODO: add name to Core Data
         dismiss(animated: true, completion: nil)
     }
