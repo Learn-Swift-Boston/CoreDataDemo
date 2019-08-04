@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6D08494322F777D2009B09A2 /* CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D08494322F777D2009B09A2 /* CoreDataDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D08494622F777D2009B09A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D08494D22F777D3009B09A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D08494F22F777D3009B09A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,7 +44,7 @@
 		6D08493A22F777D2009B09A2 = {
 			isa = PBXGroup;
 			children = (
-				6D08494522F777D2009B09A2 /* CoreData */,
+				6D08494522F777D2009B09A2 /* CoreDataDemo */,
 				6D08494422F777D2009B09A2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,12 +52,12 @@
 		6D08494422F777D2009B09A2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6D08494322F777D2009B09A2 /* CoreData.app */,
+				6D08494322F777D2009B09A2 /* CoreDataDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6D08494522F777D2009B09A2 /* CoreData */ = {
+		6D08494522F777D2009B09A2 /* CoreDataDemo */ = {
 			isa = PBXGroup;
 			children = (
 				6D08494622F777D2009B09A2 /* AppDelegate.swift */,
@@ -70,15 +70,15 @@
 				6D08495E22F77E58009B09A2 /* AddSessionViewController.swift */,
 				6D08496022F77EA9009B09A2 /* SessionTableViewCell.swift */,
 			);
-			path = CoreData;
+			path = CoreDataDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6D08494222F777D2009B09A2 /* CoreData */ = {
+		6D08494222F777D2009B09A2 /* CoreDataDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D08495722F777D3009B09A2 /* Build configuration list for PBXNativeTarget "CoreData" */;
+			buildConfigurationList = 6D08495722F777D3009B09A2 /* Build configuration list for PBXNativeTarget "CoreDataDemo" */;
 			buildPhases = (
 				6D08493F22F777D2009B09A2 /* Sources */,
 				6D08494022F777D2009B09A2 /* Frameworks */,
@@ -88,9 +88,9 @@
 			);
 			dependencies = (
 			);
-			name = CoreData;
+			name = CoreDataDemo;
 			productName = CoreData;
-			productReference = 6D08494322F777D2009B09A2 /* CoreData.app */;
+			productReference = 6D08494322F777D2009B09A2 /* CoreDataDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +108,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6D08493E22F777D2009B09A2 /* Build configuration list for PBXProject "CoreData" */;
+			buildConfigurationList = 6D08493E22F777D2009B09A2 /* Build configuration list for PBXProject "CoreDataDemo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -121,7 +121,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6D08494222F777D2009B09A2 /* CoreData */,
+				6D08494222F777D2009B09A2 /* CoreDataDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -295,12 +295,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CoreData/Info.plist;
+				INFOPLIST_FILE = CoreDataDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mattdias.CoreData;
+				PRODUCT_BUNDLE_IDENTIFIER = mattdias.CoreDataDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -312,12 +312,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CoreData/Info.plist;
+				INFOPLIST_FILE = CoreDataDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mattdias.CoreData;
+				PRODUCT_BUNDLE_IDENTIFIER = mattdias.CoreDataDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -327,7 +327,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6D08493E22F777D2009B09A2 /* Build configuration list for PBXProject "CoreData" */ = {
+		6D08493E22F777D2009B09A2 /* Build configuration list for PBXProject "CoreDataDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D08495522F777D3009B09A2 /* Debug */,
@@ -336,7 +336,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D08495722F777D3009B09A2 /* Build configuration list for PBXNativeTarget "CoreData" */ = {
+		6D08495722F777D3009B09A2 /* Build configuration list for PBXNativeTarget "CoreDataDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D08495822F777D3009B09A2 /* Debug */,
