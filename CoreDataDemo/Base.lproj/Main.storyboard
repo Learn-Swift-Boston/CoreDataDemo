@@ -21,23 +21,23 @@
                     </tabBar>
                     <connections>
                         <segue destination="AW0-Eq-OVr" kind="relationship" relationship="viewControllers" id="T7i-hH-oJX"/>
-                        <segue destination="xHY-e4-ziB" kind="relationship" relationship="viewControllers" id="gkN-Jq-GKl"/>
+                        <segue destination="xHY-e4-ziB" kind="relationship" relationship="viewControllers" id="RHe-SL-5Ab"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-23" y="1"/>
         </scene>
-        <!--Item-->
+        <!--Sessions-->
         <scene sceneID="HsX-0a-mG7">
             <objects>
-                <tableViewController id="xHY-e4-ziB" customClass="SessionsViewController" customModule="CoreData" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xHY-e4-ziB" userLabel="Sessions" customClass="SessionsViewController" customModule="CoreDataDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mGZ-x5-3Pv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sessionCell" rowHeight="124" id="g6p-jb-77H" customClass="SessionTableViewCell" customModule="CoreData" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sessionCell" rowHeight="124" id="g6p-jb-77H" customClass="SessionTableViewCell" customModule="CoreDataDemo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="124"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g6p-jb-77H" id="HtU-cZ-g2k">
@@ -87,7 +87,7 @@
                             <outlet property="delegate" destination="xHY-e4-ziB" id="Qap-AX-H0N"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="Calendar" id="gfV-Jf-AZa"/>
+                    <tabBarItem key="tabBarItem" title="Sessions" image="Calendar" id="gfV-Jf-AZa"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPR-1S-SKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -152,7 +152,7 @@
                             <outlet property="delegate" destination="AW0-Eq-OVr" id="Hph-va-jl4"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Add" selectedImage="Add" id="FSm-M4-ZjD"/>
+                    <tabBarItem key="tabBarItem" title="Add" image="Add" id="FSm-M4-ZjD"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KK3-jb-eCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,7 +161,7 @@
         <!--Add Speaker-->
         <scene sceneID="kJo-C1-wPe">
             <objects>
-                <viewController title="Add Speaker" id="OgI-aH-Ort" customClass="AddSpeakerViewController" customModule="CoreData" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add Speaker" id="OgI-aH-Ort" customClass="AddSpeakerViewController" customModule="CoreDataDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VCS-R9-987">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -201,7 +201,7 @@
         <!--Add Session-->
         <scene sceneID="cPl-Le-zRW">
             <objects>
-                <viewController title="Add Session" id="ZHr-TJ-6dG" customClass="AddSessionViewController" customModule="CoreData" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add Session" id="ZHr-TJ-6dG" customClass="AddSessionViewController" customModule="CoreDataDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cpq-Op-Bvx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
