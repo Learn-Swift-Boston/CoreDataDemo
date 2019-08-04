@@ -19,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        // Saves changes in the application's managed object context when the app enters the background.
+        DataStore.shared.saveContext()
+    }
+
     func applicationWillTerminate(_ application: UIApplication) {
         // Saves changes in the application's managed object context before the application terminates.
         DataStore.shared.saveContext()
