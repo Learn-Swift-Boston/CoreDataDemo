@@ -34,5 +34,6 @@ class AddSpeakerViewController: UIViewController {
         let speaker = Speaker(context: moc)
         speaker.name = name
         dismiss(animated: true, completion: nil)
+        DataStore.shared.saveContext()
     }
 }
