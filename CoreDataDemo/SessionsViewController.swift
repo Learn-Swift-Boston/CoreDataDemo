@@ -35,6 +35,7 @@ class SessionsViewController: UITableViewController {
             sectionNameKeyPath: nil, // not using sections
             cacheName: nil // no need for caching
         )
+        fetchedResultsController.delegate = self
 
         do {
             try fetchedResultsController.performFetch()
@@ -64,6 +65,14 @@ class SessionsViewController: UITableViewController {
         cell.dateLabel.text = session?.date.map(dateFormatter.string(from:))
 
         return cell
+    }
+
+}
+
+extension SessionsViewController: NSFetchedResultsControllerDelegate {
+
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.reloadData()
     }
 
 }
