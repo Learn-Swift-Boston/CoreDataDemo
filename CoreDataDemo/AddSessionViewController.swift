@@ -16,6 +16,12 @@ class AddSessionViewController: UIViewController {
 
     let speakerPicker = UIPickerView()
     let datePicker = UIDatePicker()
+
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()

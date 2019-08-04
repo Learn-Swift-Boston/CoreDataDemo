@@ -10,6 +10,12 @@ import UIKit
 
 class SessionsViewController: UITableViewController {
 
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        return formatter
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
