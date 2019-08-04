@@ -60,7 +60,7 @@ class SessionsViewController: UITableViewController {
         let session = fetchedResultsController.fetchedObjects?[indexPath.row]
 
         cell.titleLabel.text = session?.title
-        cell.speakerLabel.text = session?.speaker?.name
+        cell.speakerLabel.text = session?.speaker?.name.map { "by \($0)" }
         cell.dateLabel.text = session?.date.map(dateFormatter.string(from:))
 
         return cell
