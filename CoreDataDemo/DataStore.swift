@@ -10,6 +10,12 @@ import CoreData
 
 class DataStore {
 
+    // Note: having a shared/singleton data store isn't great practice, but it
+    // simplifies a few things for this demo app. It is better to have a data
+    // store at the top level of your app, such as in your App Delegate, and
+    // then pass it down to objectst that need it. Passing the data store around
+    // makes it much easier to test your classes by passing them a mock data
+    // store, or a data store that does not save changes to disk.
     static var shared = DataStore()
 
     var managedObjectContext: NSManagedObjectContext {
