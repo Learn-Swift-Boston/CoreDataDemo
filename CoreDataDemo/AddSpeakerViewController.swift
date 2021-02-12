@@ -29,7 +29,11 @@ class AddSpeakerViewController: UIViewController {
             present(alert, animated: true, completion: nil)
             return
         }
-        // TODO: add name to Core Data
+
+        let moc = DataStore.shared.managedObjectContext
+        let speaker = Speaker(context: moc)
+        speaker.name = name
         dismiss(animated: true, completion: nil)
+        DataStore.shared.saveContext()
     }
 }
